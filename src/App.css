@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Orbitron', sans-serif;
+  background-color: #0a0a0a;
+  color: white;
+  background-image: url('https://playerbrdotnet.wordpress.com/wp-content/uploads/2021/01/1.jpg'); /* Substitua com o link do logo da FURIA */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6); /* Camada escura para destacar o conteúdo */
+}
+
+.header {
+  background-color: #020202;
+  color: #00b4fc;
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 1rem;
+  border-bottom: 2px solid #00b4fc;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+.chat-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.5rem;
+  background: rgba(18, 18, 18, 0.8);
+  border-radius: 10px;
+  border: 1px solid #333;
+  animation: fadeInUp 1s ease-out;
+}
+
+.message {
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  white-space: pre-wrap;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  animation: fadeInMessage 0.5s ease-out forwards;
+}
+
+.message.user {
+  background: #00b4fc;
+  color: white;
+  align-self: flex-end;
+  margin-left: auto;
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  max-width: fit-content;
+}
+
+.message.bot {
+  background: #222;
+  color: #f0f0f0;
+  align-self: flex-start;
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  max-width: fit-content;
+}
+
+.message .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.message.user .avatar {
+  margin-left: 10px;
+  margin-right: 0;
+}
+
+.input-area {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.input-area input {
+  flex: 1;
+  padding: 0.75rem;
+  background: #1a1a1a;
+  border: 1px solid #00b4fc;
+  border-radius: 5px;
+  color: white;
+  transition: 0.3s;
+}
+
+.input-area input:focus {
+  background: #333;
+}
+
+.input-area button {
+  margin-left: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: #00b4fc;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+  opacity: 0;
+  animation: fadeInButton 1s ease-out forwards;
+}
+
+.input-area button:hover {
+  background: #0099d9;
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInMessage {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInButton {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsividade para dispositivos menores */
+@media (max-width: 768px) {
+  .header {
+    font-size: 1.25rem;
+  }
+
+  .messages {
+    padding: 0.25rem;
+  }
+
+  .message {
+    padding: 0.25rem;
+    font-size: 0.9rem;
+  }
+
+  .input-area {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .input-area input {
+    margin-bottom: 0.5rem;
+  }
+
+  .input-area button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+
+  .messages {
+    padding: 0.25rem;
+    font-size: 0.85rem;
+  }
+
+  .message {
+    padding: 0.25rem;
+  }
+
+  .input-area input,
+  .input-area button {
+    font-size: 1rem;
+  }
+
+  .input-area button {
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Estilos do painel de opções */
+.options-button {
+  margin-top: 1rem;
+  padding: 0.75rem 1.25rem;
+  background: #00b4fc;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+  width: 100%;
+}
+
+.options-button:hover {
+  background: #0099d9;
+}
+
+.options-panel {
+  margin-top: 1rem;
+  background: rgba(18, 18, 18, 0.8);
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid #333;
+}
+
+.options-panel h3 {
+  color: #00b4fc;
+  margin-bottom: 1rem;
+}
+
+.options-panel ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.options-panel li {
+  margin-bottom: 0.5rem;
+}
+
+.options-panel a {
+  color: #00b4fc;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.options-panel a:hover {
+  color: #0099d9;
+}
+
+/* NOVOS */
+.text-bubble {
+  background: inherit;
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+  animation: bubbleIn 0.4s ease-out forwards;
+}
+
+.typing-indicator {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem;
+  opacity: 0.7;
+  animation: fadeInMessage 0.5s ease-out forwards;
+}
+
+.typing-indicator .avatar {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.options-panel.slide-in {
+  animation: slideDown 0.5s ease-out forwards;
+}
+
+/* Animações novas */
+@keyframes bubbleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESTANTE DO CSS É IGUAL */
