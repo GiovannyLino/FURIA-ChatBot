@@ -8,7 +8,6 @@ Este é o repositório do **FURIA Chatbot**, um projeto desenvolvido com **Vite*
 - **React**: Biblioteca JavaScript para construir interfaces de usuário.
 - **React Router**: Para navegação entre diferentes páginas ou seções dentro da aplicação.
 - **CSS**: Para estilizar a interface do usuário.
-- **Outras Dependências**: Qualquer outra dependência que você tenha incluído no projeto.
 
 ## Pré-requisitos
 
