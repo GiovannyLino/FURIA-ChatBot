@@ -185,17 +185,20 @@ body {
 
   .input-area {
     flex-direction: column;
-    align-items: stretch;
+    align-items: stretch; /* Essa linha é boa! */
+    gap: 0.5rem; /* <-- Adicione esta linha para dar espaço entre input e botão */
   }
 
   .input-area input {
-    margin-bottom: 0.5rem;
+    margin: 0; /* Tirar margin-bottom se você for usar gap */
   }
 
   .input-area button {
     width: 100%;
+    margin: 0; /* Impede bugs de margem lateral */
   }
 }
+
 
 @media (max-width: 480px) {
   .header {
@@ -323,4 +326,4 @@ body {
   }
 }
 
-/* RESTANTE DO CSS É IGUAL */
+/* OUTROS CSS AQUI */
